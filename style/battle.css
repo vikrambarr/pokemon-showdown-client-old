@@ -440,7 +440,7 @@ License: GPLv2
 }
 .newmoonweather {
 	background: #454050 url(../fx/weather-newmoon.png) no-repeat scroll left top;
-	color: #554433;
+	color: #454050;
 }
 .snowweather,
 .hailweather {
