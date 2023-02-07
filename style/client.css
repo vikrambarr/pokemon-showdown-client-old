@@ -586,9 +586,9 @@ span.header-username:hover {
 .pm-window h3 .closebutton:hover + .minimizebutton {
 	color: #999999 !important;
 }
-.pm-window h3 span.header-username:hover + .minimizebutton {
+/* .pm-window h3 span.header-username:hover + .minimizebutton {
 	color: #999999 !important;
-}
+} */
 .closebutton:active,
 .minimizebutton:active {
 	color: #661111;
