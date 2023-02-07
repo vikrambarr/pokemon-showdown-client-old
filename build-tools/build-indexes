@@ -331,7 +331,6 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 		const isNFE = ('' + genIdent).endsWith('.3');
 		const isDLC1 = (genIdent === 8.4 || genIdent === -8.4);
 		const isNatDex = ('' + genIdent).endsWith('.1') && genIdent > 8;
-		const isInsurgence = (genIdent === 9.1);
 		const isStadium = ('' + genIdent).endsWith('.04');
 		const isDoubles = (genIdent < 0);
 		const isVGC = ('' + genIdent).endsWith('.5');
@@ -473,13 +472,6 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].items = items;
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].monotypeBans = monotypeBans;
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].formatSlices = formatSlices;
-		} else if (isInsurgence) {
-			BattleTeambuilderTable['gen8insurgence'] = {};
-			BattleTeambuilderTable['gen8insurgence'].learnsets = {};
-			BattleTeambuilderTable['gen8insurgence'].tiers = tiers;
-			BattleTeambuilderTable['gen8insurgence'].items = items;
-			BattleTeambuilderTable['gen8insurgence'].overrideTier = overrideTier;
-			BattleTeambuilderTable['gen8insurgence'].formatSlices = formatSlices;
 		} else if (isMetBattle) {
 			BattleTeambuilderTable[gen + 'metronome'] = {};
 			BattleTeambuilderTable[gen + 'metronome'].tiers = tiers;
