@@ -867,7 +867,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 		const learnset = InsurgenceLearnsets[id].learnset;
 		BattleTeambuilderTable['insurgencehbf'].learnsets[id] = {};
 		for (const moveid in learnset) {
-			BattleTeambuilderTable['insurgencehbf'].learnsets[id][moveid] = '8g';
+			BattleTeambuilderTable['insurgencehbf'].learnsets[id][moveid] = '9g';
 		}
 	}
 	const G2Learnsets = Dex.mod('gen2').data.Learnsets;
