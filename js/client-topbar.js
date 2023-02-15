@@ -593,13 +593,13 @@
 			var theme = e.currentTarget.value;
 			Storage.prefs('theme', theme);
 			if (theme === 'system') {
-				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					theme = 'dark';
-				} else {
+				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
 					theme = 'light';
+				} else {
+					theme = 'dark';
 				}
 			}
-			$('html').toggleClass('dark', theme === 'dark');
+			$('html').toggleClass('light', theme === 'light');
 		},
 		setBwgfx: function (e) {
 			var bwgfx = !!e.currentTarget.checked;
