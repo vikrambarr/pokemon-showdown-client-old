@@ -331,14 +331,12 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 		const isNFE = ('' + genIdent).endsWith('.3');
 		const isDLC1 = (genIdent === 8.4 || genIdent === -8.4);
 		const isNatDex = ('' + genIdent).endsWith('.1') && genIdent > 8;
-		const isInsurgence = (genIdent === 9.7);
 		const isStadium = ('' + genIdent).endsWith('.04');
 		const isDoubles = (genIdent < 0);
 		const isVGC = ('' + genIdent).endsWith('.5');
 		const genNum = Math.floor(isDoubles ? -genIdent : genIdent);
 		const gen = (() => {
 			let genStr = 'gen' + genNum;
-			if (isInsurgence) genStr += 'insurgence';
 			if (isDLC1) genStr += 'dlc1';
 			if (isLetsGo) genStr += 'letsgo';
 			if (isBDSP) genStr += 'bdsp';
@@ -415,11 +413,6 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 				if (isNatDex) {
 					return species.natDexTier;
 				}
-				if (isInsurgence) {
-					let tier = species.tier;
-					tier = Dex.mod('insurgencehbf').species.get(species.name).tier;
-					return tier;
-				}
 				return species.tier;
 			})();
 			overrideTier[species.id] = tier;
@@ -479,13 +472,6 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].items = items;
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].monotypeBans = monotypeBans;
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].formatSlices = formatSlices;
-		} else if (isInsurgence) {
-			BattleTeambuilderTable['insurgencehbf'] = {};
-			BattleTeambuilderTable['insurgencehbf'].learnsets = {};
-			BattleTeambuilderTable['insurgencehbf'].tiers = tiers;
-			BattleTeambuilderTable['insurgencehbf'].items = items;
-			BattleTeambuilderTable['insurgencehbf'].overrideTier = overrideTier;
-			BattleTeambuilderTable['insurgencehbf'].formatSlices = formatSlices;
 		} else if (isMetBattle) {
 			BattleTeambuilderTable[gen + 'metronome'] = {};
 			BattleTeambuilderTable[gen + 'metronome'].tiers = tiers;
@@ -860,16 +846,6 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			}
 		}
 	}
-	const InsurgenceLearnsets = Dex.mod('insurgencehbf').data.Learnsets;
-	for (const id in InsurgenceLearnsets) {
-		const species = Dex.mod('insurgencehbf').species.get(id);
-		if (species.isNonstandard && !['Unobtainable', 'CAP'].includes(species.isNonstandard)) continue;
-		const learnset = InsurgenceLearnsets[id].learnset;
-		BattleTeambuilderTable['insurgencehbf'].learnsets[id] = {};
-		for (const moveid in learnset) {
-			BattleTeambuilderTable['insurgencehbf'].learnsets[id][moveid] = '9g';
-		}
-	}
 	const G2Learnsets = Dex.mod('gen2').data.Learnsets;
 	for (const id in G2Learnsets) {
 		const learnset = G2Learnsets[id].learnset;
@@ -1039,7 +1015,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 	// Mods
 	//
 
-	for (const mod of ['gen7letsgo', 'gen8bdsp', 'insurgencehbf']) {
+	for (const mod of ['gen7letsgo', 'gen8bdsp']) {
 		const modDex = Dex.mod(mod);
 		const modData = modDex.data;
 		const parentDex = Dex.forGen(modDex.gen);
