@@ -411,6 +411,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 					return species.doublesTier;
 				}
 				if (isNatDex) {
+					if (species.tags.includes('Insurgence')) return 'Illegal';
 					return species.natDexTier;
 				}
 				return species.tier;
