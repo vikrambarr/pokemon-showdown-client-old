@@ -678,7 +678,7 @@ span.header-username:hover {
 	overflow-scrolling: touch;
 }
 .ps-room.ps-room-light {
-	background: rgba(242,247,250,.85);
+	background: rgba(88,148,182,.85);
 	color: black;
 }
 .ps-room.ps-room-opaque {
@@ -1784,7 +1784,7 @@ a.ilink.yours {
 	display: block;
 	overflow: hidden;
 	height: auto;
-	background: transparent;
+	background: #ffffff5e;
 	border: 0;
 	padding: 1px 0;
 	margin: 0;
