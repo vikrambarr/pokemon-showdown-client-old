@@ -25,7 +25,7 @@ function readableDate($time=0) {
 				background: transparent;
 				color: black;
 				font-size: 9pt;
-				font-family: Verdana, sans-serif;
+				font-family: Courier New, Verdana, sans-serif;
 			}
 			body {
 				padding: 2px 10px;
