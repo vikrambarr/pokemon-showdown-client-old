@@ -19,7 +19,7 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'pyuku',
-	host: '82.38.215.69',
+	host: '82.37.113.215.psim.us',
 	port: 443,
 	httpport: 8000,
 	altport: 80,
