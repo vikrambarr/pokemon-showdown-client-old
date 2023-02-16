@@ -534,7 +534,6 @@ export class BattleLog {
 			return hex.length === 1 ? '0' + hex : hex;
 		};
 		this.colorCache[name] = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-		if (name === "yoshifanfic") return `#000000`;
 		return this.colorCache[name];
 	}
 
