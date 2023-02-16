@@ -503,9 +503,16 @@ export class BattleLog {
 
 	static usernameColor(name: ID) {
 		if (this.colorCache[name]) return this.colorCache[name];
+		const toHex = (x: number) => {
+			const hex = Math.round(x * 255).toString(16);
+			return hex.length === 1 ? '0' + hex : hex;
+		};
 		let hash;
 		if (Config.customcolors[name]) {
-			hash = MD5(Config.customcolors[name]);
+			if (Config.customcolors[name] === 'yosh') return `#${toHex(0)}${toHex(0)}${toHex(0)}`;
+			else {
+				hash = MD5(Config.customcolors[name]);
+			}
 		} else {
 			hash = MD5(name);
 		}
@@ -529,10 +536,7 @@ export class BattleLog {
 		L += HLmod;
 
 		let {R: r, G: g, B: b} = this.HSLToRGB(H, S, L);
-		const toHex = (x: number) => {
-			const hex = Math.round(x * 255).toString(16);
-			return hex.length === 1 ? '0' + hex : hex;
-		};
+		
 		this.colorCache[name] = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 		return this.colorCache[name];
 	}

@@ -30,5 +30,5 @@ Config.roomsFirstOpenScript = function () {
 };
 
 Config.customcolors = {
-	'yoshifanfic': 'aeo'
+	'yoshifanfic': 'yosh'
 };
