@@ -492,7 +492,7 @@
 			buf += '<p><strong>Graphics</strong></p>';
 			var theme = Dex.prefs('theme');
 			var colorSchemeQuerySupported = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').media !== 'not all';
-			buf += '<p><label class="optlabel">Theme: <select name="theme"><option value="light"' + (theme === 'light' ? ' selected="selected"' : '') + '>Light</option><option value="dark"' + (!theme || theme === 'dark' ? ' selected="selected"' : '') + '>Dark</option>';
+			buf += '<p><label class="optlabel">Theme: <select name="theme"><option value="light"' + (!theme || theme === 'light' ? ' selected="selected"' : '') + '>Light</option><option value="dark"' + (theme === 'dark' ? ' selected="selected"' : '') + '>Dark</option>';
 			if (colorSchemeQuerySupported) {
 				buf += '<option value="system"' + (theme === 'system' ? ' selected="selected"' : '') + '>Match system theme</option>';
 			}
