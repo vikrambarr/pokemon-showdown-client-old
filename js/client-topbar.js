@@ -590,7 +590,7 @@
 			Dex.loadSpriteData(nogif || Dex.prefs('bwgfx') ? 'bw' : 'xy');
 		},
 		setTheme: function (e) {
-			var theme = 'dark';
+			var theme = e.currentTarget.value;
 			Storage.prefs('theme', theme);
 			if (theme === 'system') {
 				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
