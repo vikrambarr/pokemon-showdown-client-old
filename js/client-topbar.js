@@ -596,7 +596,7 @@
 				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 					theme = 'dark';
 				} else {
-					theme = 'dark';
+					theme = 'light';
 				}
 			}
 			$('html').toggleClass('dark', theme === 'dark');
