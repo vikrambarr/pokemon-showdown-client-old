@@ -423,11 +423,11 @@ function toId() {
 					this.addRoom('lobby', null, true);
 				}
 				Storage.whenPrefsLoaded(function () {
-					if (!Config.server.registered) {
-						app.send('/autojoin');
-						Backbone.history.start({pushState: !Config.testclient});
-						return;
-					}
+					// if (!Config.server.registered) {
+					// 	app.send('/autojoin');
+					// 	Backbone.history.start({pushState: !Config.testclient});
+					// 	return;
+					// }
 					// Support legacy tournament setting and migrate to new pref
 					if (Dex.prefs('notournaments') !== undefined) {
 						Storage.prefs('tournaments', Dex.prefs('notournaments') ? 'hide' : 'notify');
