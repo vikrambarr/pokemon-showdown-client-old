@@ -1064,6 +1064,9 @@ exports.BattleTextAFD = {
 	solarpower: {
 		damage: "  ([POKEMON] was hurt by its Solar Power.)",
 	},
+	absolution: {
+		damage: "  ([POKEMON] was hurt by its Absolution.)",
+	},
 	stancechange: {
 		transform: "Changed to Blade Forme!",
 		transformEnd: "Changed to Shield Forme!",
