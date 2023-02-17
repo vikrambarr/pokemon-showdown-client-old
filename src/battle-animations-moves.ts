@@ -34963,6 +34963,8 @@ BattleMoveAnims['lunarcannon'] = {
 	anim: BattleMoveAnims['meteorbeam'].anim,
 	prepareAnim: BattleMoveAnims['meteorbeam'].prepareAnim,
 };
+BattleMoveAnims['stealthcoal'] = {anim: BattleMoveAnims['leechlife'].anim};
+
 BattleMoveAnims['shadowstrike'] = {anim: BattleMoveAnims['shadowforce'].anim};
 
 BattleMoveAnims['smackdown'] = {anim: BattleMoveAnims['rockblast'].anim};
