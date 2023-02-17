@@ -1102,12 +1102,15 @@ class BattleTooltips {
 			if (ability === 'slushrush' && (weather === 'hail' || weather === 'snow')) {
 				speedModifiers.push(2);
 			}
+			if (ability === 'absolution' && weather === 'newmoon') {
+				stats.spa = Math.floor(stats.spa * 1.5);
+			}
 			if (item !== 'utilityumbrella') {
 				if (weather === 'sunnyday' || weather === 'desolateland') {
 					if (ability === 'chlorophyll') {
 						speedModifiers.push(2);
 					}
-					if (ability === 'solarpower' || ability === 'absolution') {
+					if (ability === 'solarpower') {
 						stats.spa = Math.floor(stats.spa * 1.5);
 					}
 					if (ability === 'orichalcumpulse') {
