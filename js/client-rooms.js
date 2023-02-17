@@ -14,7 +14,7 @@
 
 			this.$el.addClass('ps-room-light').addClass('scrollable');
 			var buf = '<div class="pad"><button class="button" style="float:right;font-size:10pt;margin-top:3px" name="closeHide"><i class="fa fa-caret-right"></i> Hide</button>';
-			buf += '<div class="roomlisttop"></div><h2>Welcome to Plan of Attack\'s custom showdown server!</h2>';
+			buf += '<div class="rooms-officialchatrooms"></div><h2>Welcome to Plan of Attack\'s custom showdown server!</h2>';
 			buf += '<div class="roomlisttop"></div><p href="https://discord.gg/SAX3VnwPwj">Click here to join the Discord.</p>';
 			buf += '<div class="roomlist"><p><em style="font-size:20pt">Loading...</em></p></div><div class="roomlist"></div>';
 			buf += '<p><button name="toggleMoreRooms" class="button">Show more rooms</button><p>';
