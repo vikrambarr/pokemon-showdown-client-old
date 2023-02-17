@@ -1498,7 +1498,11 @@ class BattleTooltips {
 				}
 				if (value.abilityModify(0, 'Normalize')) moveType = 'Normal';
 			}
-
+			if (moveType === 'Rock') {
+				if (!move.isZ && !move.id.startsWith('hiddenpower')) {
+					if (value.abilityModify(0, 'Foundry')) moveType = 'Fire';
+				}
+			}
 			// There aren't any max moves with the sound flag, but if there were, Liquid Voice would make them water type
 			const isSound = !!(
 				forMaxMove ?
