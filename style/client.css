@@ -1226,6 +1226,7 @@ p.or:after {
 
 .roomlisttop {
 	max-width: 480px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 }
 .roomcounters {
