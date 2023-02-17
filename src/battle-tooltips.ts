@@ -1083,6 +1083,9 @@ class BattleTooltips {
 		if (ability === 'purepower' || ability === 'hugepower') {
 			stats.atk *= 2;
 		}
+		if (ability === 'athenian') {
+			stats.spa *= 2;
+		}
 		if (ability === 'hustle' || (ability === 'gorillatactics' && !clientPokemon?.volatiles['dynamax'])) {
 			stats.atk = Math.floor(stats.atk * 1.5);
 		}
@@ -1104,7 +1107,7 @@ class BattleTooltips {
 					if (ability === 'chlorophyll') {
 						speedModifiers.push(2);
 					}
-					if (ability === 'solarpower') {
+					if (ability === 'solarpower' || ability === 'absolution') {
 						stats.spa = Math.floor(stats.spa * 1.5);
 					}
 					if (ability === 'orichalcumpulse') {
