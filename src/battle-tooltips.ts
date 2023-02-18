@@ -1108,6 +1108,11 @@ class BattleTooltips {
 			if (ability === 'absolution' && weather === 'newmoon') {
 				stats.spa = Math.floor(stats.spa * 1.5);
 			}
+			if (ability === 'supercell') {
+				if (weather === 'newmoon' || weather === 'raindance' || weather === 'primordialsea') {
+					stats.spa = Math.floor(stats.spa * 1.5);
+				}
+			}
 			if (item !== 'utilityumbrella') {
 				if (weather === 'sunnyday' || weather === 'desolateland') {
 					if (ability === 'chlorophyll') {
@@ -1865,6 +1870,9 @@ class BattleTooltips {
 		}
 		if (move.flags['sound']) {
 			value.abilityModify(1.3, "Punk Rock");
+		}
+		if (move.flags['sound']) {
+			value.abilityModify(1.25, "Amplifier");
 		}
 		if (move.flags['slicing']) {
 			value.abilityModify(1.5, "Sharpness");
