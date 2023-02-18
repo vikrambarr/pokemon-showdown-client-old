@@ -35165,5 +35165,4 @@ BattleMoveAnims['lunarcannon'] = {
 	prepareAnim: BattleMoveAnims['meteorbeam'].prepareAnim,
 };
 BattleMoveAnims['stealthcoal'] = {anim: BattleMoveAnims['firepunch'].anim};
-BattleMoveAnims['achillesheel'] = {anim: BattleMoveAnims['lowkick'].anim};
 
