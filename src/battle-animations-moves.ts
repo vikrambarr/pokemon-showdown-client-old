@@ -35303,9 +35303,9 @@ BattleMoveAnims['trailblaze'] = {anim: BattleMoveAnims['powerwhip'].anim};
 BattleMoveAnims['tripledive'] = {anim: BattleMoveAnims['dive'].anim};
 
 // Insurgence
-BattleMoveAnims['lunarcannon'] = {
-	anim: BattleMoveAnims['meteorbeam'].anim,
-	prepareAnim: BattleMoveAnims['meteorbeam'].prepareAnim,
-};
+// BattleMoveAnims['lunarcannon'] = {
+// 	anim: BattleMoveAnims['meteorbeam'].anim,
+// 	prepareAnim: BattleMoveAnims['meteorbeam'].prepareAnim,
+// };
 BattleMoveAnims['stealthcoal'] = {anim: BattleMoveAnims['firepunch'].anim};
 
