@@ -509,6 +509,7 @@ export class BattleLog {
 		};
 		let hash;
 		if (Config.customcolors[name]) {
+			console.log("yosh: " + Config.customcolors[name]);
 			if (Config.customcolors[name] === 'dscy') return `#${toHex(0)}${toHex(0)}${toHex(0)}`;
 			if (Config.customcolors[name] === 'yosh') return `#${toHex(0)}${toHex(0)}${toHex(0)}`;
 			if (Config.customcolors[name] === 'rua') return `#${toHex(224)}${toHex(29)}${toHex(32)}`;
