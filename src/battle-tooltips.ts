@@ -1495,6 +1495,7 @@ class BattleTooltips {
 					if (value.abilityModify(0, 'Galvanize')) moveType = 'Electric';
 					if (value.abilityModify(0, 'Pixilate')) moveType = 'Fairy';
 					if (value.abilityModify(0, 'Refrigerate')) moveType = 'Ice';
+					if (value.abilityModify(0, 'Intoxicate')) moveType = 'Poison';
 				}
 				if (value.abilityModify(0, 'Normalize')) moveType = 'Normal';
 			}
@@ -1890,6 +1891,10 @@ class BattleTooltips {
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Galvanize");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Pixilate");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Refrigerate");
+				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Intoxicate");
+			}
+			if (move.type === 'Rock') {
+				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Foundry");
 			}
 			if (this.battle.gen > 6) {
 				value.abilityModify(1.2, "Normalize");
