@@ -34959,11 +34959,6 @@ BattleMoveAnims['phantomforce'] = {
 	anim: BattleMoveAnims['shadowforce'].anim,
 	prepareAnim: BattleMoveAnims['shadowforce'].prepareAnim,
 };
-BattleMoveAnims['lunarcannon'] = {
-	anim: BattleMoveAnims['meteorbeam'].anim,
-	prepareAnim: BattleMoveAnims['meteorbeam'].prepareAnim,
-};
-BattleMoveAnims['stealthcoal'] = {anim: BattleMoveAnims['firepunch'].anim};
 
 BattleMoveAnims['shadowstrike'] = {anim: BattleMoveAnims['shadowforce'].anim};
 
@@ -35163,3 +35158,12 @@ BattleMoveAnims['terablast'] = {anim: BattleMoveAnims['swift'].anim}; // placeho
 BattleMoveAnims['tidyup'] = {anim: BattleMoveAnims['bulkup'].anim};
 BattleMoveAnims['trailblaze'] = {anim: BattleMoveAnims['powerwhip'].anim};
 BattleMoveAnims['tripledive'] = {anim: BattleMoveAnims['dive'].anim};
+
+// Insurgence
+BattleMoveAnims['lunarcannon'] = {
+	anim: BattleMoveAnims['meteorbeam'].anim,
+	prepareAnim: BattleMoveAnims['meteorbeam'].prepareAnim,
+};
+BattleMoveAnims['stealthcoal'] = {anim: BattleMoveAnims['firepunch'].anim};
+BattleMoveAnims['achillesheel'] = {anim: BattleMoveAnims['lowkick'].anim};
+
