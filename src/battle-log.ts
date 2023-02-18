@@ -511,6 +511,8 @@ export class BattleLog {
 		if (Config.customcolors[name]) {
 			if (Config.customcolors[name] === 'dscy') return `#${toHex(0)}${toHex(0)}${toHex(0)}`;
 			if (Config.customcolors[name] === 'yosh') return `#${toHex(0)}${toHex(0)}${toHex(0)}`;
+			if (Config.customcolors[name] === 'rua') return `#${toHex(224)}${toHex(29)}${toHex(32)}`;
+			if (Config.customcolors[name] === 'fuckthisguy') return `#${toHex(125)}${toHex(122)}${toHex(0)}`;
 			else {
 				hash = MD5(Config.customcolors[name]);
 			}
