@@ -1872,6 +1872,9 @@ class BattleTooltips {
 		if (move.type === 'Dark') {
 			value.abilityModify(1.5, "Shadow Synergy");
 		}
+		if (move.flags['bite']) {
+			value.abilityModify(1.3, "Spectral Jaws");
+		}
 		for (let i = 1; i <= 5 && i <= pokemon.side.faintCounter; i++) {
 			if (pokemon.volatiles[`fallen${i}`]) {
 				value.abilityModify(1 + 0.1 * i, "Supreme Overlord");
