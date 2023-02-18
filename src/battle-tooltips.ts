@@ -1099,6 +1099,9 @@ class BattleTooltips {
 			if (ability === 'sandrush' && weather === 'sandstorm') {
 				speedModifiers.push(2);
 			}
+			if (ability === 'shadowdance' && weather === 'newmoon') {
+				speedModifiers.push(2);
+			}
 			if (ability === 'slushrush' && (weather === 'hail' || weather === 'snow')) {
 				speedModifiers.push(2);
 			}
@@ -1865,6 +1868,9 @@ class BattleTooltips {
 		}
 		if (move.flags['slicing']) {
 			value.abilityModify(1.5, "Sharpness");
+		}
+		if (move.type === 'Dark') {
+			value.abilityModify(1.5, "Shadow Synergy");
 		}
 		for (let i = 1; i <= 5 && i <= pokemon.side.faintCounter; i++) {
 			if (pokemon.volatiles[`fallen${i}`]) {
