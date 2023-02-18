@@ -3023,7 +3023,6 @@
 						set.level = 50;
 					}
 					if (baseFormat.startsWith('lc') || baseFormat.endsWith('lc')) set.level = 5;
-					if (baseFormat.contains('insurgence')) set.level = 120;
 				}
 				set.gender = 'F';
 				if (set.happiness) delete set.happiness;
@@ -3055,7 +3054,6 @@
 						set.level = 50;
 					}
 					if (baseFormat.substr(0, 2) === 'lc') set.level = 5;
-					if (baseFormat.contains('insurgence')) set.level = 120;
 				}
 				if (set.happiness) delete set.happiness;
 				if (set.shiny) delete set.shiny;
