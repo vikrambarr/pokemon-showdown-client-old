@@ -321,16 +321,18 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 	const NFE = GENS.map(num => num + 0.3);
 	const STADIUM = [2.04, 1.04];
 	const NATDEX = [9.1, 8.1];
+	const INSURGENCE = [9.7];
 	const OTHER = [9.2, 8.6, 8.4, 8.2, 8.1, -8.4, -8.6, 7.1];
 
 	// process.stdout.write("\n  ");
-	for (const genIdent of [...GENS, ...DOUBLES, ...VGC, ...NFE, ...STADIUM, ...OTHER, ...NATDEX]) {
+	for (const genIdent of [...GENS, ...DOUBLES, ...VGC, ...NFE, ...STADIUM, ...OTHER, ...NATDEX, ...INSURGENCE]) {
 		const isLetsGo = (genIdent === 7.1);
 		const isBDSP = (genIdent === 8.6 || genIdent === -8.6);
 		const isMetBattle = ('' + genIdent).endsWith('.2');
 		const isNFE = ('' + genIdent).endsWith('.3');
 		const isDLC1 = (genIdent === 8.4 || genIdent === -8.4);
 		const isNatDex = ('' + genIdent).endsWith('.1') && genIdent > 8;
+		const isInsurgence = ('' + genIdent).endsWith('.7')
 		const isStadium = ('' + genIdent).endsWith('.04');
 		const isDoubles = (genIdent < 0);
 		const isVGC = ('' + genIdent).endsWith('.5');
@@ -414,6 +416,9 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 					//if (species.tags.includes('Insurgence')) return 'Illegal';
 					return species.natDexTier;
 				}
+				if (isInsurgence) {
+					return species.natDexTier;
+				}
 				return species.tier;
 			})();
 			overrideTier[species.id] = tier;
@@ -473,6 +478,13 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].items = items;
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].monotypeBans = monotypeBans;
 			BattleTeambuilderTable['gen' + genNum + 'natdex'].formatSlices = formatSlices;
+		} if (isInsurgence) {
+			BattleTeambuilderTable['gen' + genNum + 'insurgencepoa'] = {};
+			BattleTeambuilderTable['gen' + genNum + 'insurgencepoa'].tiers = tiers;
+			BattleTeambuilderTable['gen' + genNum + 'insurgencepoa'].overrideTier = overrideTier;
+			BattleTeambuilderTable['gen' + genNum + 'insurgencepoa'].items = items;
+			BattleTeambuilderTable['gen' + genNum + 'insurgencepoa'].monotypeBans = monotypeBans;
+			BattleTeambuilderTable['gen' + genNum + 'insurgencepoa'].formatSlices = formatSlices;
 		} else if (isMetBattle) {
 			BattleTeambuilderTable[gen + 'metronome'] = {};
 			BattleTeambuilderTable[gen + 'metronome'].tiers = tiers;
@@ -591,7 +603,11 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 				if (isNatDex) {
 					if (item.isNonstandard !== "Past") continue;
 					if (!item.itemUser && !item.zMove) continue;
-				} else if (genNum !== 2) {
+				} if (isInsurgence) {
+					if (item.isNonstandard !== "Past") continue;
+					if (!item.itemUser && !item.zMove) continue;
+				}
+				else if (genNum !== 2) {
 					continue;
 				}
 			}
