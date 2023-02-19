@@ -1446,6 +1446,9 @@ class BattleTooltips {
 			case 'snow':
 				moveType = 'Ice';
 				break;
+			case 'newmoon':
+				moveType = 'Dark';
+				break;
 			}
 		}
 		if (move.id === 'terrainpulse' && pokemon.isGrounded(serverPokemon)) {
