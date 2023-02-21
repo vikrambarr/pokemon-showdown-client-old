@@ -1083,6 +1083,9 @@ class BattleTooltips {
 		if (ability === 'purepower' || ability === 'hugepower') {
 			stats.atk *= 2;
 		}
+		if (ability === 'athenian') {
+			stats.spa *= 2;
+		}
 		if (ability === 'hustle' || (ability === 'gorillatactics' && !clientPokemon?.volatiles['dynamax'])) {
 			stats.atk = Math.floor(stats.atk * 1.5);
 		}
@@ -1096,8 +1099,19 @@ class BattleTooltips {
 			if (ability === 'sandrush' && weather === 'sandstorm') {
 				speedModifiers.push(2);
 			}
+			if (ability === 'shadowdance' && weather === 'newmoon') {
+				speedModifiers.push(2);
+			}
 			if (ability === 'slushrush' && (weather === 'hail' || weather === 'snow')) {
 				speedModifiers.push(2);
+			}
+			if (ability === 'absolution' && weather === 'newmoon') {
+				stats.spa = Math.floor(stats.spa * 1.5);
+			}
+			if (ability === 'supercell') {
+				if (weather === 'newmoon' || weather === 'raindance' || weather === 'primordialsea') {
+					stats.spa = Math.floor(stats.spa * 1.5);
+				}
 			}
 			if (item !== 'utilityumbrella') {
 				if (weather === 'sunnyday' || weather === 'desolateland') {
@@ -1432,6 +1446,9 @@ class BattleTooltips {
 			case 'snow':
 				moveType = 'Ice';
 				break;
+			case 'newmoon':
+				moveType = 'Dark';
+				break;
 			}
 		}
 		if (move.id === 'terrainpulse' && pokemon.isGrounded(serverPokemon)) {
@@ -1489,10 +1506,15 @@ class BattleTooltips {
 					if (value.abilityModify(0, 'Galvanize')) moveType = 'Electric';
 					if (value.abilityModify(0, 'Pixilate')) moveType = 'Fairy';
 					if (value.abilityModify(0, 'Refrigerate')) moveType = 'Ice';
+					if (value.abilityModify(0, 'Intoxicate')) moveType = 'Poison';
 				}
 				if (value.abilityModify(0, 'Normalize')) moveType = 'Normal';
 			}
-
+			if (moveType === 'Rock') {
+				if (!move.isZ && !move.id.startsWith('hiddenpower')) {
+					if (value.abilityModify(0, 'Foundry')) moveType = 'Fire';
+				}
+			}
 			// There aren't any max moves with the sound flag, but if there were, Liquid Voice would make them water type
 			const isSound = !!(
 				forMaxMove ?
@@ -1852,8 +1874,17 @@ class BattleTooltips {
 		if (move.flags['sound']) {
 			value.abilityModify(1.3, "Punk Rock");
 		}
+		if (move.flags['sound']) {
+			value.abilityModify(1.25, "Amplifier");
+		}
 		if (move.flags['slicing']) {
 			value.abilityModify(1.5, "Sharpness");
+		}
+		if (move.type === 'Dark') {
+			value.abilityModify(1.5, "Shadow Synergy");
+		}
+		if (move.flags['bite']) {
+			value.abilityModify(1.3, "Spectral Jaws");
 		}
 		for (let i = 1; i <= 5 && i <= pokemon.side.faintCounter; i++) {
 			if (pokemon.volatiles[`fallen${i}`]) {
@@ -1880,6 +1911,10 @@ class BattleTooltips {
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Galvanize");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Pixilate");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Refrigerate");
+				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Intoxicate");
+			}
+			if (move.type === 'Rock') {
+				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Foundry");
 			}
 			if (this.battle.gen > 6) {
 				value.abilityModify(1.2, "Normalize");
