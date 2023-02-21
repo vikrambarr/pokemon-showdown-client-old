@@ -1242,9 +1242,6 @@
 				if (this.curTeam.gen === 9) {
 					buf += '<span class="detailcell"><label>Tera Type</label>' + (set.teraType || species.types[0]) + '</span>';
 				}
-				if (this.curTeam.gen === 9) {
-					buf += '<span class="detailcell"><label>Custom Move</label>' + (set.customMovetype || species.types[0]) + '</span>';
-				}
 			}
 			buf += '</button></div></div>';
 
@@ -2693,15 +2690,6 @@
 				}
 				buf += '</select></div></div>';
 			}
-			if (this.curTeam.gen === 9) {
-				buf += '<div class="formrow"><label class="formlabel" title="Custom Move">Custom Move:</label><div><select name="custommove">';
-				var types = Dex.types.all();
-				var customMovetype = set.customMovetype || species.types[0];
-				for (var i = 0; i < types.length; i++) {
-					buf += '<option value="' + types[i].name + '"' + (customMovetype === types[i].name ? ' selected="selected"' : '') + '>' + types[i].name + '</option>';
-				}
-				buf += '</select></div></div>';
-			}
 
 			buf += '</form>';
 			if (species.cosmeticFormes) {
@@ -2777,13 +2765,6 @@
 			} else {
 				delete set.hpType;
 			}
-			// Custom Move type
-			var customMovetype = this.$chart.find('select[name=custommove]').val();
-			if (Dex.types.isName(customMovetype)) {
-				set.customMovetype = customMovetype;
-			} else {
-				delete set.customMovetype;
-			}
 
 			// Tera type
 			var teraType = this.$chart.find('select[name=teratype]').val();
@@ -2800,7 +2781,7 @@
 				'F': 'Female',
 				'N': '&mdash;'
 			};
-			buf += '<span class="detailcell detailcell-first"><label>Level</label>' + (set.level || 120) + '</span>';
+			buf += '<span class="detailcell detailcell-first"><label>Level</label>' + (set.level || 100) + '</span>';
 			if (this.curTeam.gen > 1) {
 				buf += '<span class="detailcell"><label>Gender</label>' + GenderChart[set.gender || 'N'] + '</span>';
 				if (isLetsGo) {
@@ -2820,9 +2801,6 @@
 				}
 				if (this.curTeam.gen === 9) {
 					buf += '<span class="detailcell"><label>Tera Type</label>' + (set.teraType || species.types[0]) + '</span>';
-				}
-				if (this.curTeam.gen === 9) {
-					buf += '<span class="detailcell"><label>Custom Move</label>' + (set.customMovetype || species.types[0]) + '</span>';
 				}
 			}
 			this.$('button[name=details]').html(buf);
@@ -3305,7 +3283,6 @@
 			if (set.dynamaxLevel) delete set.dynamaxLevel;
 			if (set.gigantamax) delete set.gigantamax;
 			if (set.teraType) delete set.teraType;
-			if (set.customMovetype) delete set.customMovetype;
 			if (!this.curTeam.format.includes('hackmons') && species.requiredItems.length === 1) {
 				set.item = species.requiredItems[0];
 			} else {
