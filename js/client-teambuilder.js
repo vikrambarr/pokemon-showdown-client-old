@@ -1212,7 +1212,7 @@
 				'F': 'Female',
 				'N': '&mdash;'
 			};
-			buf += '<span class="detailcell detailcell-first"><label>Level</label>' + (set.level || 120) + '</span>';
+			buf += '<span class="detailcell detailcell-first"><label>Level</label>' + (set.level || 100) + '</span>';
 			if (this.curTeam.gen > 1) {
 				buf += '<span class="detailcell"><label>Gender</label>' + GenderChart[set.gender || species.gender || 'N'] + '</span>';
 				if (isLetsGo) {
@@ -2616,7 +2616,7 @@
 			buf += '<div class="resultheader"><h3>Details</h3></div>';
 			buf += '<form class="detailsform">';
 
-			buf += '<div class="formrow"><label class="formlabel">Level:</label><div><input type="number" min="1" max="100" step="1" name="level" value="' + (typeof set.level === 'number' ? set.level : 120) + '" class="textbox inputform numform" /></div></div>';
+			buf += '<div class="formrow"><label class="formlabel">Level:</label><div><input type="number" min="1" max="100" step="1" name="level" value="' + (typeof set.level === 'number' ? set.level : 100) + '" class="textbox inputform numform" /></div></div>';
 
 			if (this.curTeam.gen > 1) {
 				buf += '<div class="formrow"><label class="formlabel">Gender:</label><div>';
@@ -2723,8 +2723,8 @@
 
 			// level
 			var level = parseInt(this.$chart.find('input[name=level]').val(), 10);
-			if (!level || level > 120 || level < 1) level = 120;
-			if (level !== 120 || set.level) set.level = level;
+			if (!level || level > 120 || level < 1) level = 100;
+			if (level !== 100 || set.level) set.level = level;
 
 			// happiness
 			var happiness = parseInt(this.$chart.find('input[name=happiness]').val(), 10);
@@ -2800,7 +2800,7 @@
 				'F': 'Female',
 				'N': '&mdash;'
 			};
-			buf += '<span class="detailcell detailcell-first"><label>Level</label>' + (set.level || 120) + '</span>';
+			buf += '<span class="detailcell detailcell-first"><label>Level</label>' + (set.level || 100) + '</span>';
 			if (this.curTeam.gen > 1) {
 				buf += '<span class="detailcell"><label>Gender</label>' + GenderChart[set.gender || 'N'] + '</span>';
 				if (isLetsGo) {
