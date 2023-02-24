@@ -1518,6 +1518,11 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 							'hiddenpowerbug', 'hiddenpowerdark', 'hiddenpowerdragon', 'hiddenpowerelectric', 'hiddenpowerfighting', 'hiddenpowerfire', 'hiddenpowerflying', 'hiddenpowerghost', 'hiddenpowergrass', 'hiddenpowerground', 'hiddenpowerice', 'hiddenpowerpoison', 'hiddenpowerpsychic', 'hiddenpowerrock', 'hiddenpowersteel', 'hiddenpowerwater'
 						);
 					}
+					if (moveid === 'custommove') {
+						moves.push(
+							'custommovebug', 'custommovedark', 'custommovedragon', 'custommoveelectric', 'custommovefighting', 'custommovefire', 'custommoveflying', 'custommoveghost', 'custommovegrass', 'custommoveground', 'custommoveice', 'custommovepoison', 'custommovepsychic', 'custommoverock', 'custommovesteel', 'custommovewater'
+						);
+					}
 				}
 			}
 			learnsetid = this.nextLearnsetid(learnsetid, species.id);
