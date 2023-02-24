@@ -1520,7 +1520,7 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 					}
 					if (moveid === 'custommove') {
 						moves.push(
-							'custommovebug', 'custommovedark', 'custommovedragon', 'custommoveelectric', 'custommovefighting', 'custommovefire', 'custommoveflying', 'custommoveghost', 'custommovegrass', 'custommoveground', 'custommoveice', 'custommovepoison', 'custommovepsychic', 'custommoverock', 'custommovesteel', 'custommovewater'
+							'custommovebug', 'custommovedark', 'custommovedragon', 'custommoveelectric','custommovefairy', 'custommovefighting', 'custommovefire', 'custommoveflying', 'custommoveghost', 'custommovegrass', 'custommoveground', 'custommoveice', 'custommovepoison', 'custommovepsychic', 'custommoverock', 'custommovesteel', 'custommovewater'
 						);
 					}
 				}
